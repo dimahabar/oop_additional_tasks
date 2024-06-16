@@ -12,7 +12,31 @@
 
 
 class BankAccount:
-    pass
+    balance: float
+
+
+    def __init__(self, balance):
+        self.balance = balance
+
+
+    def balance(self):
+        return self.balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return amount
+
+    # Используйте условие if, чтобы проверить, имеется ли на счете достаточная
+    # сумма денег для обработки вывода средств
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            print("\n Insufficient balance  ")
+    def close(self):
+        return self.withdraw(self.balance)
+
 
 
 # код для проверки 
